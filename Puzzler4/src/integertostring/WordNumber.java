@@ -13,7 +13,11 @@ public class WordNumber {
 		String words = "";
 
 		while (num > 0) {
-			words = helper(num % 1000) + THOUSANDS[i] + " " + words;
+			if(helper(num%1000).equals("")){
+				words = helper(num % 1000) + " " + words;
+			} else{
+				words = helper(num % 1000) + THOUSANDS[i] + " " + words;
+			}
 			num /= 1000;
 			i++;
 		}
